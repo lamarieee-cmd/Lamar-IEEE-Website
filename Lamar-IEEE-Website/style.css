@@ -724,3 +724,34 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   =====================  Contact PAGE  =========================
+   ============================================================ */
+
+.contact-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.96);
+  color: #222;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.contact-card h2 {
+  margin-top: 0;
+  color: #7c0a02;
+}
+
+@media (max-width: 850px) {
+  .contact-page {
+    grid-template-columns: 1fr;
+  }
+}
