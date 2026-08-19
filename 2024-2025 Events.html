@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024–2025 Events | Lamar University IEEE Student Branch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <img src="websiteimages/ieee-logo.png" alt="IEEE Logo" class="logo">
+      <span class="site-name">Lamar University IEEE Student Branch</span>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="membership.html">Membership</a>
+      <a href="projects.html">Projects</a>
+      <a href="events.html">Events</a>
+      <a href="Officers.html">Officers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-heading">
+      <h1>2024–2025 Events</h1>
+      <a href="events.html" class="back-link">← Back to Events</a>
+    </section>
+
+    <section class="events-list">
+
+    <section class="event-card">
+        <div class="event-info">
+          <h2>Discover Engineering 2025</h2>
+          <p class="event-date">April 12, 2025</p>
+          <p>
+            Snap Circuits with young aspiring future engineers!
+          </p>
+        </div>
+
+        <div class="event-slideshow">
+          <div class="event-slide active"><img src="websiteimages/DE1.jpg" onclick="openLightbox(this.src)" alt=" Westbrook photo 1"></div>
+          <div class="event-slide"><img src="websiteimages/DE2.jpg" onclick="openLightbox(this.src)" alt="Westbrook photo 2"></div>
+          <div class="event-slide active"><img src="websiteimages/DE3.jpg" onclick="openLightbox(this.src)" alt="Westbrook photo 3"></div>
+          <div class="event-slide"><img src="websiteimages/DE4.jpg" onclick="openLightbox(this.src)" alt="Westbrook photo 4"></div>
+          
+         <button class="event-btn prev" onclick="changeEventSlide(this, -1)">&#10094;</button>
+         <button class="event-btn next" onclick="changeEventSlide(this, 1)">&#10095;</button>
+        </div>
+      </section>
+    
+    
+    <section class="event-card">
+        <div class="event-info">
+          <h2>Annual College of Engineering Softball Tournament</h2>
+          <p class="event-date">March 22, 2025</p>
+          <p>
+            Another Softball tournament in the books! Congrats to the Civil Engineering Department!
+          </p>
+        </div>
+
+        <div class="event-slideshow">
+          <div class="event-slide active"><img src="websiteimages/st1.jpg" onclick="openLightbox(this.src)" alt=" Westbrook photo 1"></div>
+          <div class="event-slide"><img src="websiteimages/st2.jpg" onclick="openLightbox(this.src)" alt="Westbrook photo 2"></div>
+          <div class="event-slide active"><img src="websiteimages/st3.jpg" onclick="openLightbox(this.src)" alt="Westbrook photo 3"></div>
+          <div class="event-slide"><img src="websiteimages/st4.jpg" onclick="openLightbox(this.src)" alt="Westbrook photo 4"></div>
+          <div class="event-slide active"><img src="websiteimages/st5.jpg" onclick="openLightbox(this.src)" alt="Westbrok photo 5"></div>
+          
+         <button class="event-btn prev" onclick="changeEventSlide(this, -1)">&#10094;</button>
+         <button class="event-btn next" onclick="changeEventSlide(this, 1)">&#10095;</button>
+        </div>
+      </section>
+
+    <section class="event-card">
+        <div class="event-info">
+          <h2>Westbrook High School Lunch & Learn with LU Motorsports, AICHE, ASCE, ASME </h2>
+          <p class="event-date">October 2, 2024</p>
+          <p>
+            Had a blast speaking to some aspiring upcoming students at Westbrook HS who are interested in engineering!
+          </p>
+        </div>
+
+        <div class="event-slideshow">
+          <div class="event-slide active"><img src="websiteimages/westbrook1.jpg" onclick="openLightbox(this.src)" alt=" Westbrook photo 1"></div>
+          <div class="event-slide"><img src="websiteimages/westbrook2.jpg" onclick="openLightbox(this.src)" alt="Westbrook photo 2"></div>
+          <div class="event-slide active"><img src="websiteimages/westbrook3.jpg" onclick="openLightbox(this.src)" alt="Westbrook photo 3"></div>
+          <div class="event-slide"><img src="websiteimages/westbrook4.jpg" onclick="openLightbox(this.src)" alt="Westbrook photo 4"></div>
+          <div class="event-slide active"><img src="websiteimages/westbrook5.jpg" onclick="openLightbox(this.src)" alt="Westbrok photo 5"></div>
+          
+         <button class="event-btn prev" onclick="changeEventSlide(this, -1)">&#10094;</button>
+         <button class="event-btn next" onclick="changeEventSlide(this, 1)">&#10095;</button>
+        </div>
+      </section>
+    
+      </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" class="lightbox-content" alt="Expanded event photo">
+</div>
+
+ <script>
+  function changeEventSlide(button, step) {
+    const slideshow = button.closest(".event-slideshow");
+    const slides = slideshow.querySelectorAll(".event-slide");
+
+    let currentIndex = 0;
+
+    slides.forEach((slide, index) => {
+      if (slide.classList.contains("active")) {
+        currentIndex = index;
+      }
+      slide.classList.remove("active");
+    });
+
+    let newIndex = currentIndex + step;
+
+    if (newIndex < 0) {
+      newIndex = slides.length - 1;
+    }
+
+    if (newIndex >= slides.length) {
+      newIndex = 0;
+    }
+
+    slides[newIndex].classList.add("active");
+  }
+
+  function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+  </script>
+
+</body>
+</html>

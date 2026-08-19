@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lamar University IEEE Student Branch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <img src="websiteimages/ieee-logo.png" alt="IEEE Logo" class="logo">
+       <span class="site-name">Lamar University IEEE Student Branch</span>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="Membership.html">Membership</a>
+      <a href="projects.html">Projects</a>
+      <a href="events.html">Events</a>
+      <a href="Officers.html">Officers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="home-main">
+  <section class="slideshow">
+    <div class="slides fade">
+      <img src="websiteimages/slide1a.jpg" alt="IEEE event photo">
+    </div>
+    <div class="slides fade">
+    <img src="websiteimages/slide1.png" alt="IEEE event photo">
+    </div>
+
+    <div class="slides fade">
+      <img src="websiteimages/slide2.jpeg" alt="Project photo">
+    </div>
+
+    <div class="slides fade">
+      <img src="websiteimages/slide3.jpg" alt="Robotics photo">
+    </div>
+
+    <div class="slides fade">
+      <img src="websiteimages/slide4.JPG" alt="Officer photo">
+    </div>
+
+    <div class="slides fade">
+      <img src="websiteimages/slide5.png" alt="Event photo">
+    </div>
+
+    <div class="slides fade">
+      <img src="websiteimages/slide6.png" alt="Project photo">
+    </div>
+
+    <div class="slides fade">
+      <img src="websiteimages/slide7.png" alt="Project photo">
+    </div>
+
+    <div class="slides fade">
+      <img src="websiteimages/slide8.jpg" alt="Project photo">
+    </div>
+
+    <div class="slides fade">
+      <img src="websiteimages/slide9.jpg" alt="Project photo">
+    </div>
+
+    <button class="slide-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="slide-btn next" onclick="changeSlide(1)">&#10095;</button>
+  </section>
+
+  <section class="home-grid">
+    <div class="home-card featured-card">
+      <h2>Upcoming Events</h2>
+      <p class="card-date">NA</p>
+      <p>
+        Enjoy Summer Vacation!!
+      </p>
+    </div>
+
+    <div class="home-card">
+      <h2>Latest News</h2>
+      <ul class="news-list">
+        <li> 2025-2026 Fantastic Freshman: Ayden Hicks <br>
+        2025-2026 Steller Sophmore: Alexander Penaloza </li>
+        <li>2026-2027 Officer Board has been elected!!!</li>
+        <li>Discover Engineering 2026!</li>
+        <li>Our robotics team attended the IEEE Region 5 Robotics Competition and placed 12th!</li>
+      </ul>
+    </div>
+
+    <div class="home-card">
+      <h2>Announcements</h2>
+      <p>
+        Introducing your 2026-2027 Officer Board! <br>
+        President: Anas Saleh <br>
+        Vice President: Wanlipa Poondam <br>
+        Treasurer: Jesus Fernandez <br>
+        Secretary: Abigail Montemayor <br>
+        Program Chair: Yareli Torres <br>
+        Project Chair: Joshua Smith <br>
+        Robotics Chair: Ayden Hicks <br>
+        Social Media Chair: Jacy Winfrey <br>
+        External Communications Chair: Andrew Blommaert <br>
+
+      </p>
+    </div>
+
+    <div class="home-card">
+      <h2>Quick Links</h2>
+      <div class="quick-links">
+        <a href="officers.html" class="small-btn">Meet the Team</a>
+        <a href="projects.html" class="small-btn">View Projects</a>
+        <a href="contact.html" class="small-btn">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  let slideIndex = 0;
+  let slideTimer;
+
+  function showSlide(index) {
+    const slides = document.getElementsByClassName("slides");
+
+    if (index >= slides.length) {
+      slideIndex = 0;
+    } else if (index < 0) {
+      slideIndex = slides.length - 1;
+    } else {
+      slideIndex = index;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex].style.display = "block";
+  }
+
+  function changeSlide(step) {
+    clearInterval(slideTimer);
+    showSlide(slideIndex + step);
+    autoSlide();
+  }
+
+  function autoSlide() {
+    slideTimer = setInterval(() => {
+      showSlide(slideIndex + 1);
+    }, 4000);
+  }
+
+  showSlide(slideIndex);
+  autoSlide();
+</script>
+</body>
+</html>
